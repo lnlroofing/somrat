@@ -41,4 +41,8 @@
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/google_analytics.html" . }}
 
+  {{ if .Site.Params.GoogleAnalyticsID }}
+  {{ partial "analytics-gtag.html" . }}
+  {{ end }}
+
 </head>

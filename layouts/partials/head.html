@@ -39,10 +39,15 @@
   <meta property="og:image" content="{{ . | absURL }}" />
   {{ end }}
   {{ template "_internal/opengraph.html" . }}
-  {{ template "_internal/google_analytics.html" . }}
 
-  {{ if .Site.Params.GoogleAnalyticsID }}
-  {{ partial "analytics-gtag.html" . }}
-  {{ end }}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XFFPR81EKQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XFFPR81EKQ');
+</script>
 
 </head>
